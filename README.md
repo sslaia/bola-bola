@@ -1,15 +1,15 @@
 # bola-bola
 
-English: see below
+_English: see below_
 
 
 ## Hadia mbola-bola?
 
-Tumbu ba dödögu wamagamöi aplikasi Bola-bola andre ena'ö terou dödö ndra banuada ba Danö Niha wamo'ösi kamus Li Niha.
+Tumbu ba dödögu wamagamöi aplikasi __Bola-bola__ andre ena'ö terou dödö ndra banuada ba Danö Niha wamo'ösi kamus Li Niha.
 
-Me talu ndröfi 2020 tumbu ba dödö hadauga Nono Niha ba wamörögö nifotöi _dokumentasi, standardisasi_ ba _promosi_ Li Niha ba ginötö _digital_ andre tebörögö ba ndröfi 2020 irugi ndröfi 2025.
+Me talu ndröfi 2020 tumbu ba dödö hadauga Nono Niha ba wamörögö nifotöi _dokumentasi, standardisasi_ ba _promosi_ Li Niha ba ginötö _digital_ andre, tebörögö ba ndröfi 2020 irugi ndröfi 2025.
 
-Ena'ö aoha he moroi ba wangohalöŵögöi _administrasi teknis_ ba he göi moroi ba gawailota ( _biaya_ ), te'oguna'ö _fasilitas_ nihönagö Wikimedia ya'ia da'ö Wiktionary ba Wikipedia. Si lö'ö-lö'önia ba mböröta andre. Na so dania gefe ba zi so föna tola manö mufawu'a ia ba mbolokha gu'ö si bohou.
+Ena'ö aoha he moroi ba wangohalöŵögöi _administrasi teknis_ ba he göi moroi ba gawailota ( _biaya_ ), te'oguna'ö _fasilitas_ nihönagö Wikimedia ya'ia da'ö Wiktionary ba Wikipedia. Si lö'ö-lö'önia ba mböröta andre. Na so dania gefe ba zi so föna tola manö mufawu'a ia ba mbolokha gu'ö ( _website_ ) si bohou.
 
 ## Hadia ha aplikasi kamus mbola-bola andre?
 
@@ -36,7 +36,7 @@ Ndrege da'ö. Ya'ahowu!
 
 ## What is bola-bola?
 
-The idea to write this bola-bola application was born to encourage Nias speaking people to contribute to Nias dictionary.
+The idea of writing this _bola-bola_ application was born to encourage Nias speaking people to contribute to Nias dictionary.
 
 In the mid 2020 a few people came together and agreed to start a five year programme of documenting Nias language (till 2025) and preserving it for the digital generation.
 
@@ -44,15 +44,15 @@ To make it easy the programme utilises the Wikimedia projects (Wiktionary and Wi
 
 ## So is it a dictionary app then?
 
-Only in the beginning. The expectation is to develop the app to be like a _bola-bola_ in Nias language, where you can find different things that sooth. So this would be a digital bola-bola where you can look up for words, chat, read news, etc. Therefore the name bola-bola and not dictionary.
+Only in the beginning. The expectation is to develop the app to be like a _bola-bola_ in Nias language, where you can find different things that sooth you. So this would be a _digital bola-bola_ where you can look up for words, chat, read news, etc. Therefore the name bola-bola and not dictionary.
 
-## Why do you use Flutter?
+## Why is it written in Flutter?
 
 To make it easier in the future to use the same code base to create Android, iOS, Windows, Linux and web applications.
 
 ## Who is the sponsor?
 
-There is no sponsor at the moment. Everybody in the Nias language group is a volunteer. There is a saying in Nias language:
+There is no sponsor at the moment. All in the Nias language group are volunteers. There is a saying in Nias language:
 
 > Moroi khöda, oi khöda
 
@@ -60,6 +60,6 @@ which means: from us, for us. We do it ourselves for the common good of us all.
 
 ## Is there any project timeline?
 
-No precise timeline considering that all project members are volunteers who are also busy with their own works. But the core volunteers are committed to spend 15 minutes of their time daily for this project.
+No precise timeline considering that all project members are volunteers who are also busy with their own works. But the core volunteers are committed to spend 15 minutes of their time daily for the programme (not exactly this app project, which is only a part of the whole).
 
 That't all. Ya'ahowu.
