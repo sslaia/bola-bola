@@ -7,7 +7,7 @@ _English: see below_
 
 Tumbu ba dödögu wamagamöi aplikasi __Bola-bola__ andre ena'ö terou dödö ndra banuada ba Danö Niha wamo'ösi kamus Li Niha.
 
-Me talu ndröfi 2020 tumbu ba dödö hadauga Nono Niha ba wamörögö nifotöi _dokumentasi, standardisasi_ ba _promosi_ Li Niha ba ginötö _digital_ andre, tebörögö ba ndröfi 2020 irugi ndröfi 2025.
+Me talu ndröfi 2020 labörögö hadauga ira Iraono Niha ba wamalua nifotöi _dokumentasi, standardisasi_ ba _promosi_ Li Niha ba ginötö _digital_ andre, tebörögö ba ndröfi 2020 irugi ndröfi 2025.
 
 Ena'ö aoha he moroi ba wangohalöŵögöi _administrasi teknis_ ba he göi moroi ba gawailota ( _biaya_ ), te'oguna'ö _fasilitas_ nihönagö Wikimedia ya'ia da'ö Wiktionary ba Wikipedia. Si lö'ö-lö'önia ba mböröta andre. Na so dania gefe ba zi so föna tola manö mufawu'a ia ba mbolokha gu'ö ( _website_ ) si bohou.
 
@@ -35,6 +35,8 @@ Ndrege da'ö. Ya'ahowu!
 # English text is below.
 
 ## What is bola-bola?
+
+Bbola-bola is a Nias word meaning the bettel quid pouch. In a _bola-bola_ people in Nias island, who to this day are still chewing bettel quid, keep everything necessary for that: areca catechu nut, piper bettel leaf, dried uncaria leaf and slaked lime (calcium hydroxide) and sometimes tobacco.
 
 The idea of writing this _bola-bola_ application was born to encourage Nias speaking people to contribute to Nias dictionary.
 
