@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-        title: const Text('Bola-bola'),
+        title: const Text('Bola-bola Li Niha'),
         actions: [
           IconButton(
             tooltip: 'Alui',
@@ -51,16 +51,16 @@ class _MyHomePageState extends State<MyHomePage> {
             DrawerHeader(
               decoration: BoxDecoration(color: Colors.indigo),
               child: Text(
-                'Bola-bola',
+                'Bola-bola Li Niha',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.white70,
                   fontSize: 24,
                 ),
               ),
             ),
             ListTile(
               leading: Icon(Icons.home_outlined),
-              title: Text('Olayama'),
+              title: Text('Olayama [Main Page]'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: Icon(Icons.create_outlined),
-              title: Text('Sura'),
+              title: Text('Sura [Create]'),
               onTap: () {
                 // Navigator.push(
                 //   context,
@@ -98,20 +98,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: Icon(Icons.list_alt_outlined),
-              title: Text('Angolita'),
+              title: Text('Angolita [Word list]'),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => WikiListPage(
-                            title: 'List of wiki pages',
+                            title: 'Recent entries in the dictionary',
                           )),
                 );
               },
             ),
             ListTile(
               leading: Icon(Icons.wb_incandescent_outlined),
-              title: Text('Dahö-dahö'),
+              title: Text('Dahö-dahö [Quiz]'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: Icon(Icons.campaign_outlined),
-              title: Text('Turia'),
+              title: Text('Turia [News]'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -131,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: Icon(Icons.settings),
-              title: Text('Setelan'),
+              title: Text('Setelan [Settings]'),
               onTap: () {
                 // Navigator.push(
                 //   context,
