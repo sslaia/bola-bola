@@ -36,9 +36,9 @@ Ndrege da'ö. Ya'ahowu!
 
 ## What is bola-bola?
 
-Bbola-bola is a Nias word meaning the bettel quid pouch. In a _bola-bola_ people in Nias island, who to this day are still chewing bettel quid, keep everything necessary for that: areca catechu nut, piper bettel leaf, dried uncaria leaf and slaked lime (calcium hydroxide) and sometimes tobacco.
+Bola-bola is a Nias word meaning the bettel quid pouch. In a _bola-bola_ people in Nias island, who to this day are still chewing bettel quid, keep everything necessary for that: areca catechu nut, piper bettel leaf, dried uncaria leaf and slaked lime (calcium hydroxide) and sometimes tobacco.
 
-The idea of writing this _bola-bola_ application was born to encourage Nias speaking people to contribute to Nias dictionary.
+The idea of writing this _bola-bola_ application was born to encourage Nias speaking people to contribute to Nias dictionary and encyclopedia.
 
 In the mid 2020 a few people came together and agreed to start a five year programme of documenting Nias language (till 2025) and preserving it for the digital generation.
 
