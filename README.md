@@ -2,6 +2,9 @@
 
 _English: see below_
 
+## Si bohou ba da'a
+
+[Faigi gambara screenshots aplikasi ba da'a!](./screenshots/SCREENSHOTS.md)
 
 ## Hadia mbola-bola?
 
