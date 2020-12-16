@@ -2,19 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:bola_bola/views/wiki/detail_page.dart';
+import 'package:bola_bola/views/wiki/edit_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
-// final Set<JavascriptChannel> jsChannels = [
-//   JavascriptChannel(
-//       name: 'Print',
-//       onMessageReceived: (JavascriptMessage message) {
-//         print(message.message);
-//       }),
-// ].toSet();
-
+// Fetch the latest entries in the wiktionary
 Future<List<WikiPages>> fetchWikiPages(http.Client client) async {
   final response = await client.get(
       'https://incubator.wikimedia.org/w/api.php?action=query&format=json&list=search&srsearch=Wt/nia/&srlimit=25&srsort=create_timestamp_desc');
@@ -54,10 +49,17 @@ class WikiListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          title,
+          style: GoogleFonts.comfortaa(
+            textStyle:
+                TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+          ),
+        ),
+        backgroundColor: Colors.indigo,
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 4.0),
@@ -95,47 +97,54 @@ class WikiPagesList extends StatelessWidget {
           child: ListTile(
             title: Text(
               title,
-              style: TextStyle(color: Colors.indigo),
+              style: GoogleFonts.libreBaskerville(
+                textStyle: TextStyle(
+                    color: Colors.indigoAccent,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18.0),
+              ),
             ),
-            subtitle: Text(wikipages[index].snippet),
-            trailing: Icon(
-              Icons.favorite,
-              color: Colors.redAccent,
+            subtitle: Text(
+              inlineHtmlWrap(wikipages[index].snippet),
+              style: GoogleFonts.libreBaskerville(
+                textStyle: TextStyle(
+                    color: Colors.black54,
+                    fontStyle: FontStyle.italic,
+                    // fontWeight: FontWeight.w600,
+                    fontSize: 14.0),
+              ),
             ),
+            // Long press on the item to edit it
+            onLongPress: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => EditPage(
+                    title: title,
+                    selectedUrl:
+                        'https://id.wiktionary.org/api/rest_v1/page/mobile-sections/masker?redirect=false',
+                  ),
+                ),
+              );
+            },
+            // Tap on the item to view the whole page
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (BuildContext context) => DetailPage(
-                    title: 'Kamus Nias',
+                    title: title,
                     selectedUrl:
                         'https://incubator.wikimedia.org/wiki/Wt/nia/$title',
                   ),
                 ),
               );
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) {
-              //     return WebviewScaffold(
-              //       url: 'https://incubator.wikimedia.org/wiki/$wikiTitle',
-              //       appBar: AppBar(
-              //         title: Text(title),
-              //       ),
-              //       withZoom: true,
-              //       withLocalStorage: true,
-              //       hidden: true,
-              //       initialChild: Container(
-              //         color: Colors.grey,
-              //         child: Center(
-              //           child: Text('Loading...'),
-              //         ),
-              //       ),
-              //     );
-              //   }),
-              // );
             },
           ),
         );
       },
     );
+  }
+
+  String inlineHtmlWrap(String htmlStr) {
+    return htmlStr.replaceAll(new RegExp("</?span[^>]*>"), '');
   }
 }

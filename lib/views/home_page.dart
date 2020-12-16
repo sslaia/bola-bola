@@ -83,19 +83,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     image: AssetImage('assets/images/$bgImage'),
                   ),
                 ),
-                child: Positioned(
-                  bottom: 12.0,
-                  left: 12.0,
-                  child: Text(
-                    'Bola-bola Li',
-                    style: GoogleFonts.cinzelDecorative(
-                      textStyle: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24.0),
+                child: Stack(children: [
+                  Positioned(
+                    bottom: 12.0,
+                    left: 12.0,
+                    child: Text(
+                      'Bola-bola Li',
+                      style: GoogleFonts.cinzelDecorative(
+                        textStyle: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24.0),
+                      ),
                     ),
                   ),
-                ),
+                ]),
               ),
               ListTile(
                 leading: Icon(Icons.home_outlined),
@@ -110,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (BuildContext context) => DetailPage(
-                        title: 'Kamus Nias',
+                        title: 'Olayama',
                         selectedUrl:
                             'https://incubator.wikimedia.org/wiki/Wt/nia/Olayama',
                       ),
@@ -282,7 +284,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Spacer(),
             Text(
-              'mama\'anö Li Niha ba gu\'ö digital',
+              'mama\'anö Li Niha ba gu\'ö',
               style: GoogleFonts.comfortaa(
                 textStyle: TextStyle(
                     color: Colors.white,

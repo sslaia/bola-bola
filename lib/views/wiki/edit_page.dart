@@ -4,20 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-// This page is considered a temporary solution
-// TODO: perform api request for the content of the page
-//        turn json object into a string
-//        parse the html/wikitext
-//        and show it to the user
+// This is only placeholder.
+// In this page the app would request a token for editing purpose
+// and use that token to fetch the content of the page and the timestamp,
+// and perform the post request to save the changes
 
-class DetailPage extends StatelessWidget {
+class EditPage extends StatelessWidget {
   final String title;
   final String selectedUrl;
 
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 
-  DetailPage({
+  EditPage({
     @required this.title,
     @required this.selectedUrl,
   });

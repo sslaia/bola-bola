@@ -1,10 +1,15 @@
 import 'package:bola_bola/views/wiki/detail_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webfeed/webfeed.dart';
 
-// Source: https://medium.com/@scottingram.scott/hacker-news-rss-app-in-flutter-976728b09361
+// This page would aggregate news from different sources: BBC, CNN, Tempo and ???
+// At the moment it only channels the BBC news feeds
+
+// Source code: https://medium.com/@scottingram.scott/hacker-news-rss-app-in-flutter-976728b09361
+// TODO: rewrite the code to accomodate different news feed sources
 
 class NewsPage extends StatefulWidget {
   NewsPage() : super();
@@ -103,8 +108,14 @@ class _NewsPageState extends State<NewsPage> {
       child: Scaffold(
         backgroundColor: Colors.white70,
         appBar: AppBar(
-          title: Text(_title),
-          backgroundColor: Colors.red[900],
+          title: Text(
+            _title,
+            style: GoogleFonts.comfortaa(
+              textStyle:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            ),
+          ),
+          backgroundColor: Colors.indigo,
         ),
         body: body(),
       ),

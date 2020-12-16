@@ -4,13 +4,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'quiz_true_false.dart';
 import 'result_page.dart';
 
+// This is more a demo of what could be done with quiz
+// TODO: to develop various quiz types
+
 class QuizPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Dahö-dahö'),
+        title: Text(
+          'Dahö-dahö',
+          style: GoogleFonts.comfortaa(
+            textStyle:
+                TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+          ),
+        ),
+        backgroundColor: Colors.indigo,
       ),
       body: SafeArea(
         child: Padding(
