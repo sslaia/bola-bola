@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'quiz_true_false.dart';
 import 'result_page.dart';
@@ -7,7 +8,10 @@ class QuizPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text('Dahö-dahö'),
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -93,51 +97,56 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
               child: Text(
                 quiz.getQuestionText(),
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25.0,
-                  color: Colors.white,
-                ),
+                style: GoogleFonts.comfortaa(
+                    textStyle: TextStyle(
+                        color: Colors.indigo,
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.w600)),
               ),
             ),
           ),
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              textColor: Colors.white,
-              color: Colors.green,
-              child: Text(
-                'True',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            children: [
+              FlatButton(
+                color: Colors.red,
+                child: Text(
+                  'Sala',
+                  style: GoogleFonts.modernAntiqua(
+                    textStyle: TextStyle(
+                        color: Colors.white,
+                        // fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.0),
+                  ),
                 ),
+                onPressed: () {
+                  //The user picked false.
+                  checkAnswer(false);
+                },
               ),
-              onPressed: () {
-                //The user picked true.
-                checkAnswer(true);
-              },
-            ),
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              color: Colors.red,
-              child: Text(
-                'False',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
+              Spacer(),
+              FlatButton(
+                textColor: Colors.white,
+                color: Colors.green,
+                child: Text(
+                  'Atulö',
+                  style: GoogleFonts.modernAntiqua(
+                    textStyle: TextStyle(
+                        color: Colors.white,
+                        // fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.0),
+                  ),
                 ),
+                onPressed: () {
+                  //The user picked true.
+                  checkAnswer(true);
+                },
               ),
-              onPressed: () {
-                //The user picked false.
-                checkAnswer(false);
-              },
-            ),
+            ],
           ),
         ),
         Padding(

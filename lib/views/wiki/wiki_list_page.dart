@@ -1,19 +1,19 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:bola_bola/views/wiki/detail_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:http/http.dart' as http;
 
-final Set<JavascriptChannel> jsChannels = [
-  JavascriptChannel(
-      name: 'Print',
-      onMessageReceived: (JavascriptMessage message) {
-        print(message.message);
-      }),
-].toSet();
+// final Set<JavascriptChannel> jsChannels = [
+//   JavascriptChannel(
+//       name: 'Print',
+//       onMessageReceived: (JavascriptMessage message) {
+//         print(message.message);
+//       }),
+// ].toSet();
 
 Future<List<WikiPages>> fetchWikiPages(http.Client client) async {
   final response = await client.get(
@@ -103,26 +103,35 @@ class WikiPagesList extends StatelessWidget {
               color: Colors.redAccent,
             ),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return WebviewScaffold(
-                    url: 'https://incubator.wikimedia.org/wiki/$wikiTitle',
-                    appBar: AppBar(
-                      title: Text(title),
-                    ),
-                    withZoom: true,
-                    withLocalStorage: true,
-                    hidden: true,
-                    initialChild: Container(
-                      color: Colors.grey,
-                      child: Center(
-                        child: Text('Loading...'),
-                      ),
-                    ),
-                  );
-                }),
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => DetailPage(
+                    title: 'Kamus Nias',
+                    selectedUrl:
+                        'https://incubator.wikimedia.org/wiki/Wt/nia/$title',
+                  ),
+                ),
               );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) {
+              //     return WebviewScaffold(
+              //       url: 'https://incubator.wikimedia.org/wiki/$wikiTitle',
+              //       appBar: AppBar(
+              //         title: Text(title),
+              //       ),
+              //       withZoom: true,
+              //       withLocalStorage: true,
+              //       hidden: true,
+              //       initialChild: Container(
+              //         color: Colors.grey,
+              //         child: Center(
+              //           child: Text('Loading...'),
+              //         ),
+              //       ),
+              //     );
+              //   }),
+              // );
             },
           ),
         );

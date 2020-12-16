@@ -1,5 +1,5 @@
+import 'package:bola_bola/views/wiki/detail_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webfeed/webfeed.dart';
@@ -128,35 +128,22 @@ class _NewsPageState extends State<NewsPage> {
                   bottom: 4.0,
                 ),
                 child: ListTile(
-                  title: title(item.title),
-                  subtitle: subtitle(item.pubDate.toString().substring(0, 10)),
-                  trailing: rightIcon(),
-                  contentPadding: EdgeInsets.all(5.0),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return WebviewScaffold(
-                          url: 'https://' +
-                              targetUrl.substring(6, targetUrl.length),
-                          appBar: AppBar(
-                            backgroundColor: Colors.red[900],
-                            title: Text('BBC Indonesia'),
+                    title: title(item.title),
+                    subtitle:
+                        subtitle(item.pubDate.toString().substring(0, 10)),
+                    trailing: rightIcon(),
+                    contentPadding: EdgeInsets.all(5.0),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => DetailPage(
+                            title: 'BBC Indonesia',
+                            selectedUrl: 'https://' +
+                                targetUrl.substring(6, targetUrl.length),
                           ),
-                          withZoom: true,
-                          withLocalStorage: true,
-                          hidden: true,
-                          initialChild: Container(
-                            color: Colors.white,
-                            child: Center(
-                              child: Text('Loading...'),
-                            ),
-                          ),
-                        );
-                      }),
-                    );
-                  },
-                ),
+                        ),
+                      );
+                    }),
               );
             },
           ),
@@ -170,7 +157,7 @@ class _NewsPageState extends State<NewsPage> {
     return Text(
       title,
       style: TextStyle(
-          fontSize: 18.0, fontWeight: FontWeight.w500, color: Colors.black),
+          fontSize: 18.0, fontWeight: FontWeight.w500, color: Colors.black54),
       maxLines: 3,
       overflow: TextOverflow.ellipsis,
     );
