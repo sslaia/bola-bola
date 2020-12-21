@@ -1,17 +1,16 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:bola_bola/views/webview_page.dart';
-import 'package:bola_bola/views/wiki/edit_page.dart';
+import 'package:bola_bola/views/wiki/detail_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
 
-// Fetch the latest entries in the wiktionary
 Future<List<WikiPages>> fetchWikiPages(http.Client client, String title) async {
-  final url =
+  final String url =
       'https://id.wiktionary.org/w/api.php?action=query&format=json&srlimit=10&srsort=relevance&list=search&srsearch=';
+
   final response = await client.get(url + title);
 
   // Use the compute function to run parseWikiPages in a separate isolate.
@@ -41,36 +40,53 @@ class WikiPages {
   }
 }
 
-class WikiListPage extends StatelessWidget {
-  final String title;
-
-  WikiListPage({Key key, this.title}) : super(key: key);
+class SearchBar extends SearchDelegate<String> {
+  List<WikiPages> wikipages;
+  // String selectedResult;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Colors.indigo,
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 4.0),
-          child: FutureBuilder<List<WikiPages>>(
-            future: fetchWikiPages(http.Client(), title),
-            builder: (context, snapshot) {
-              if (snapshot.hasError) print(snapshot.error);
-              return snapshot.hasData
-                  ? WikiPagesList(wikipages: snapshot.data)
-                  : Center(
-                      child: CircularProgressIndicator(),
-                    );
-            },
-          ),
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: Icon(Icons.close),
+        onPressed: () {
+          query = '';
+        },
+      )
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+        icon: AnimatedIcon(
+          icon: AnimatedIcons.menu_arrow,
+          progress: transitionAnimation,
         ),
-      ),
+        onPressed: () {
+          // Navigator.pop(context);
+          close(context, null);
+        });
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return FutureBuilder<List<WikiPages>>(
+      future: fetchWikiPages(http.Client(), query),
+      builder: (context, snapshot) {
+        if (snapshot.hasError) print(snapshot.error);
+        return snapshot.hasData
+            ? WikiPagesList(wikipages: snapshot.data)
+            : Center(
+                child: CircularProgressIndicator(),
+              );
+      },
     );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    return Container();
   }
 }
 
@@ -84,34 +100,38 @@ class WikiPagesList extends StatelessWidget {
     return ListView.builder(
       itemCount: wikipages.length,
       itemBuilder: (context, index) {
-        String wikiTitle = wikipages[index].title;
-        String title = wikipages[index].title.substring(7, wikiTitle.length);
+        String title = wikipages[index].title;
         return Card(
           elevation: 16.0,
           child: ListTile(
-            title: Text(title),
+            title: Text(
+              title,
+              style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.indigo),
+            ),
             subtitle: Text(
               inlineHtmlWrap(wikipages[index].snippet),
+              style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black),
             ),
-            // Long press on the item to edit it
+            trailing: Icon(
+              Icons.edit,
+              color: Colors.indigoAccent,
+            ),
             onLongPress: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (BuildContext context) => EditPage(
-                    title: title,
-                    selectedUrl:
-                        'https://nia.wiktionary.org/api/rest_v1/page/mobile-sections/$title?redirect=false',
-                  ),
-                ),
-              );
+              //TODO: perform api request for editing the page
             },
-            // Tap on the item to view the whole page
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (BuildContext context) => WebViewPage(
+                  builder: (BuildContext context) => DetailPage(
                     title: title,
-                    selectedUrl: 'https://nia.wiktionary.org/wiki/$title',
+                    selectedUrl:
+                        'https://id.wiktionary.org/api/rest_v1/page/mobile-sections-remaining/$title',
                   ),
                 ),
               );

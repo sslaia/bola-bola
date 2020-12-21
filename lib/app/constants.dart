@@ -34,20 +34,20 @@ String getBackgroundImage() {
   int randomNr = random.nextInt(7) + 1;
 
   if (randomNr == 1) {
-    return 'beach1.jpg';
+    return 'beach1.webp';
   } else if (randomNr == 2) {
-    return 'beach2.jpg';
+    return 'beach2.webp';
   } else if (randomNr == 3) {
-    return 'book1.jpg';
+    return 'book1.webp';
   } else if (randomNr == 4) {
-    return 'book2.jpg';
+    return 'book2.webp';
   } else if (randomNr == 5) {
-    return 'child1.jpg';
+    return 'child1.webp';
   } else if (randomNr == 6) {
-    return 'children1.jpg';
+    return 'children1.webp';
   } else if (randomNr == 7) {
-    return 'children2.jpg';
+    return 'children2.webp';
   } else {
-    return 'book2.jpg';
+    return 'book2.webp';
   }
 }

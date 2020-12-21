@@ -3,19 +3,20 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-// This is only placeholder.
-// In this page the app would request a token for editing purpose
-// and use that token to fetch the content of the page and the timestamp,
-// and perform the post request to save the changes
+// This page is considered a temporary solution
+// TODO: perform api request for the content of the page
+//        turn json object into a string
+//        parse the html/wikitext
+//        and show it to the user
 
-class EditPage extends StatelessWidget {
+class WebViewPage extends StatelessWidget {
   final String title;
   final String selectedUrl;
 
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 
-  EditPage({
+  WebViewPage({
     @required this.title,
     @required this.selectedUrl,
   });
@@ -24,7 +25,13 @@ class EditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: Text(
+            title,
+            style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.w600,
+                color: Colors.white),
+          ),
           backgroundColor: Colors.indigo,
         ),
         body: WebView(

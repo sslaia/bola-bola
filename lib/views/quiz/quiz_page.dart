@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'quiz_true_false.dart';
 import 'result_page.dart';
@@ -15,10 +14,8 @@ class QuizPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Dahö-dahö',
-          style: GoogleFonts.comfortaa(
-            textStyle:
-                TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-          ),
+          style: TextStyle(
+              fontSize: 24.0, fontWeight: FontWeight.w600, color: Colors.white),
         ),
         backgroundColor: Colors.indigo,
       ),
@@ -51,10 +48,6 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
         quiz.reset();
         scoreKeeper = [];
         Navigator.of(context).push(_createRoute());
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => ResultPage()),
-        // );
       }
       //update the scorekeeper and go to the next question
       else {
@@ -107,11 +100,10 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
               child: Text(
                 quiz.getQuestionText(),
                 textAlign: TextAlign.center,
-                style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w600)),
+                style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.indigo),
               ),
             ),
           ),
@@ -124,13 +116,10 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                 color: Colors.red,
                 child: Text(
                   'Sala',
-                  style: GoogleFonts.modernAntiqua(
-                    textStyle: TextStyle(
-                        color: Colors.white,
-                        // fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16.0),
-                  ),
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
                 ),
                 onPressed: () {
                   //The user picked false.
@@ -143,13 +132,10 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                 color: Colors.green,
                 child: Text(
                   'Atulö',
-                  style: GoogleFonts.modernAntiqua(
-                    textStyle: TextStyle(
-                        color: Colors.white,
-                        // fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16.0),
-                  ),
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
                 ),
                 onPressed: () {
                   //The user picked true.

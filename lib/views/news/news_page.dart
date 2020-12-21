@@ -1,12 +1,8 @@
-import 'package:bola_bola/views/wiki/detail_page.dart';
+import 'package:bola_bola/views/webview_page.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webfeed/webfeed.dart';
-
-// This page would aggregate news from different sources: BBC, CNN, Tempo and ???
-// At the moment it only channels the BBC news feeds
 
 // Source code: https://medium.com/@scottingram.scott/hacker-news-rss-app-in-flutter-976728b09361
 // TODO: rewrite the code to accomodate different news feed sources
@@ -14,7 +10,7 @@ import 'package:webfeed/webfeed.dart';
 class NewsPage extends StatefulWidget {
   NewsPage() : super();
 
-  final String title = 'From BBC Indonesia';
+  final String bbcTitle = 'Dari BBC Indonesia';
 
   @override
   _NewsPageState createState() => _NewsPageState();
@@ -22,8 +18,9 @@ class NewsPage extends StatefulWidget {
 
 class _NewsPageState extends State<NewsPage> {
   static const String BBC_URL = 'https://feeds.bbci.co.uk/indonesia/rss.xml';
-  RssFeed _feed;
-  String _title;
+
+  RssFeed _bbcFeed;
+  String _bbcTitle;
 
   static const String loadingMessage = 'Loading Feed...';
   static const String feedLoadErrorMessage = 'Error Loading Feed.';
@@ -33,13 +30,13 @@ class _NewsPageState extends State<NewsPage> {
 
   updateTitle(title) {
     setState(() {
-      _title = title;
+      _bbcTitle = title;
     });
   }
 
   updateFeed(feed) {
     setState(() {
-      _feed = feed;
+      _bbcFeed = feed;
     });
   }
 
@@ -63,7 +60,7 @@ class _NewsPageState extends State<NewsPage> {
         return;
       }
       updateFeed(result);
-      updateTitle('BBC Indonesia');
+      updateTitle('Turia moroi khö BBC');
     });
   }
 
@@ -82,12 +79,12 @@ class _NewsPageState extends State<NewsPage> {
   void initState() {
     super.initState();
     _refreshKey = GlobalKey<RefreshIndicatorState>();
-    updateTitle(widget.title);
+    updateTitle(widget.bbcTitle);
     load();
   }
 
   isFeedEmpty() {
-    return null == _feed || null == _feed.items;
+    return null == _bbcFeed || null == _bbcFeed.items;
   }
 
   body() {
@@ -109,13 +106,13 @@ class _NewsPageState extends State<NewsPage> {
         backgroundColor: Colors.white70,
         appBar: AppBar(
           title: Text(
-            _title,
-            style: GoogleFonts.comfortaa(
-              textStyle:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-            ),
+            _bbcTitle,
+            style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.w400,
+                color: Colors.white),
           ),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.red[900],
         ),
         body: body(),
       ),
@@ -128,27 +125,27 @@ class _NewsPageState extends State<NewsPage> {
         flex: 1,
         child: Container(
           child: ListView.builder(
-            padding: EdgeInsets.all(5.0),
-            itemCount: _feed.items.length,
+            padding: EdgeInsets.all(4.0),
+            itemCount: _bbcFeed.items.length,
             itemBuilder: (BuildContext context, int index) {
-              final item = _feed.items[index];
+              final item = _bbcFeed.items[index];
               String targetUrl = item.link;
               return Card(
                 elevation: 4.0,
-                margin: EdgeInsets.only(
-                  bottom: 4.0,
-                ),
+                // margin: EdgeInsets.only(
+                //   bottom: 4.0,
+                // ),
                 child: ListTile(
                     title: title(item.title),
-                    subtitle:
-                        subtitle(item.pubDate.toString().substring(0, 10)),
+                    subtitle: subtitle(item.description.toString()),
                     trailing: rightIcon(),
-                    contentPadding: EdgeInsets.all(5.0),
+                    contentPadding: EdgeInsets.only(
+                        left: 18.0, right: 16.0, top: 8.0, bottom: 8.0),
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (BuildContext context) => DetailPage(
-                            title: 'BBC Indonesia',
+                          builder: (BuildContext context) => WebViewPage(
+                            title: 'Turia moroi khö BBC',
                             selectedUrl: 'https://' +
                                 targetUrl.substring(6, targetUrl.length),
                           ),
@@ -168,7 +165,7 @@ class _NewsPageState extends State<NewsPage> {
     return Text(
       title,
       style: TextStyle(
-          fontSize: 18.0, fontWeight: FontWeight.w500, color: Colors.black54),
+          fontSize: 18.0, fontWeight: FontWeight.w500, color: Colors.red[900]),
       maxLines: 3,
       overflow: TextOverflow.ellipsis,
     );
@@ -179,8 +176,8 @@ class _NewsPageState extends State<NewsPage> {
     return Text(
       subTitle,
       style: TextStyle(
-          fontSize: 15.0, fontWeight: FontWeight.w300, color: Colors.red[900]),
-      maxLines: 1,
+          fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.black87),
+      maxLines: 3,
       overflow: TextOverflow.ellipsis,
     );
   }

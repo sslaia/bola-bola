@@ -5,7 +5,15 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          'Dahö-dahö',
+          style: TextStyle(
+              fontSize: 24.0, fontWeight: FontWeight.w600, color: Colors.white),
+        ),
+        backgroundColor: Colors.indigo,
+      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -33,9 +41,15 @@ class _ResultPageWidgetState extends State<ResultPageWidget> {
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Center(
-              child: Text('Congratulation.\nYo\'ve completed the quiz.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 25.0, color: Colors.white)),
+              child: Text(
+                'Congratulation.\nYo\'ve completed the quiz.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.indigo),
+                // style: TextStyle(fontSize: 25.0, color: Colors.white),
+              ),
             ),
           ),
         ),
@@ -46,11 +60,11 @@ class _ResultPageWidgetState extends State<ResultPageWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FlatButton(
-                color: Colors.white,
+                color: Colors.indigo,
                 child: Text(
                   'Restart',
                   style: TextStyle(
-                    color: Colors.black54,
+                    color: Colors.white,
                     fontSize: 18.0,
                   ),
                 ),
@@ -61,12 +75,12 @@ class _ResultPageWidgetState extends State<ResultPageWidget> {
                 },
               ),
               FlatButton(
-                color: Colors.white,
+                color: Colors.indigo,
                 child: Text(
                   'Close',
                   style: TextStyle(
                     fontSize: 18.0,
-                    color: Colors.black54,
+                    color: Colors.white,
                   ),
                 ),
                 onPressed: () {

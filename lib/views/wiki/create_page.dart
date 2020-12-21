@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CreatePage extends StatefulWidget {
   CreatePage({Key key, this.title}) : super(key: key);
@@ -91,15 +90,7 @@ class _CreatePageState extends State<CreatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.title,
-          style: GoogleFonts.comfortaa(
-            textStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold),
-          ),
-        ),
+        title: Text(widget.title),
         backgroundColor: Colors.indigo,
       ),
       body: SingleChildScrollView(
@@ -118,13 +109,7 @@ class _CreatePageState extends State<CreatePage> {
                         value: wikiLanguage,
                         // icon: Icon(Icons.language_outlined),
                         elevation: 16,
-                        style: GoogleFonts.comfortaa(
-                          textStyle: TextStyle(
-                              color: Colors.indigo,
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        // style: TextStyle(color: Colors.indigo),
+                        style: TextStyle(color: Colors.indigo),
                         items: <String>[
                           'Nias',
                           'Indonesia',
@@ -151,13 +136,7 @@ class _CreatePageState extends State<CreatePage> {
                         value: wikiClass,
                         // icon: Icon(Icons.language_outlined),
                         elevation: 16,
-                        style: GoogleFonts.comfortaa(
-                          textStyle: TextStyle(
-                              color: Colors.indigo,
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        // style: TextStyle(color: Colors.teal),
+                        style: TextStyle(color: Colors.teal),
                         items: <String>[
                           'Verba',
                           'Nomina',
@@ -178,15 +157,7 @@ class _CreatePageState extends State<CreatePage> {
                     ),
                     Spacer(),
                     ElevatedButton(
-                        child: Text(
-                          'Fuli börögö',
-                          style: GoogleFonts.comfortaa(
-                            textStyle: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
+                        child: Text('Fuli börögö'),
                         onPressed: () {
                           _clearWikiForm();
                         })
@@ -206,12 +177,6 @@ class _CreatePageState extends State<CreatePage> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
-                  ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
                   ),
                 ),
                 SizedBox(
@@ -233,12 +198,6 @@ class _CreatePageState extends State<CreatePage> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
-                  ),
                 ),
                 SizedBox(
                   height: 4.0,
@@ -252,12 +211,6 @@ class _CreatePageState extends State<CreatePage> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
-                  ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
                   ),
                 ),
                 SizedBox(
@@ -273,12 +226,6 @@ class _CreatePageState extends State<CreatePage> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
-                  ),
                 ),
                 SizedBox(
                   height: 4.0,
@@ -292,12 +239,6 @@ class _CreatePageState extends State<CreatePage> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
-                  ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
                   ),
                 ),
                 SizedBox(
@@ -313,12 +254,6 @@ class _CreatePageState extends State<CreatePage> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
-                  ),
                 ),
                 SizedBox(
                   height: 4.0,
@@ -332,12 +267,6 @@ class _CreatePageState extends State<CreatePage> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
-                  ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
                   ),
                 ),
                 SizedBox(
@@ -353,12 +282,6 @@ class _CreatePageState extends State<CreatePage> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
-                  ),
                 ),
                 SizedBox(
                   height: 4.0,
@@ -373,12 +296,6 @@ class _CreatePageState extends State<CreatePage> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
-                  ),
                 ),
                 SizedBox(
                   height: 4.0,
@@ -392,12 +309,6 @@ class _CreatePageState extends State<CreatePage> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
-                  ),
                 ),
                 SizedBox(
                   height: 4.0,
@@ -410,12 +321,6 @@ class _CreatePageState extends State<CreatePage> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
-                  ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
                   ),
                 ),
                 SizedBox(
@@ -432,12 +337,6 @@ class _CreatePageState extends State<CreatePage> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
-                  style: GoogleFonts.comfortaa(
-                    textStyle: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600),
-                  ),
                 ),
                 Row(
                   children: [
@@ -447,6 +346,7 @@ class _CreatePageState extends State<CreatePage> {
                         if (_createWikiPageKey.currentState.validate()) {
                           setState(() {
                             _buildWikiPage();
+                            dispose();
 
                             // SubmittedPage (wikiLanguage, wikiClass, wikiEntry, wikiDefinition, wikiExample);
                           });
@@ -456,12 +356,6 @@ class _CreatePageState extends State<CreatePage> {
                               backgroundColor: Colors.deepOrange,
                               content: Text(
                                 'So zi fasala! \nSi lö\'ö-lö\'önia mufo\'ösi entri ba definisi.',
-                                style: GoogleFonts.comfortaa(
-                                  textStyle: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.w600),
-                                ),
                               ),
                             ),
                           );
@@ -475,15 +369,10 @@ class _CreatePageState extends State<CreatePage> {
                     ElevatedButton(
                         child: Text(
                           'Fuli börögö',
-                          style: GoogleFonts.comfortaa(
-                            textStyle: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w600),
-                          ),
                         ),
                         onPressed: () {
                           _clearWikiForm();
+                          dispose();
                         })
                   ],
                 )
