@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Colors.transparent,
           elevation: 4.0,
           title: Text(
-            'Bola-bola Li',
+            'BOLA LI',
             style: TextStyle(
                 fontFamily: 'CinzelDecorative',
                 fontWeight: FontWeight.w700,
@@ -60,7 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           actions: [
             IconButton(
-              // tooltip: 'Alui',
               icon: const Icon(Icons.search),
               onPressed: () {
                 showSearch(context: context, delegate: SearchBar());
@@ -154,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 bottom: 12.0,
                 left: 12.0,
                 child: Text(
-                  'Bola-bola Li',
+                  'Bola Li',
                   style: TextStyle(
                       fontFamily: 'CinzelDecorative',
                       fontWeight: FontWeight.w700,

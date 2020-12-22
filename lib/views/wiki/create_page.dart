@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CreatePage extends StatefulWidget {
-  CreatePage({Key key, this.title}) : super(key: key);
+  // CreatePage({Key key, this.title}) : super(key: key);
 
-  final String title;
+  // final String title;
 
   @override
   _CreatePageState createState() => _CreatePageState();
@@ -90,7 +90,7 @@ class _CreatePageState extends State<CreatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Sura'),
         backgroundColor: Colors.indigo,
       ),
       body: SingleChildScrollView(

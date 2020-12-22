@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:bola_bola/views/wiki/create_page.dart';
 import 'package:bola_bola/views/wiki/detail_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +52,14 @@ class SearchBar extends SearchDelegate<String> {
         icon: Icon(Icons.close),
         onPressed: () {
           query = '';
+        },
+      ),
+      IconButton(
+        icon: Icon(Icons.add),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (BuildContext context) => CreatePage()),
+          );
         },
       )
     ];
@@ -115,12 +124,11 @@ class WikiPagesList extends StatelessWidget {
               inlineHtmlWrap(wikipages[index].snippet),
               style: TextStyle(
                   fontSize: 16.0,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
                   color: Colors.black),
             ),
             trailing: Icon(
               Icons.edit,
-              color: Colors.indigoAccent,
             ),
             onLongPress: () {
               //TODO: perform api request for editing the page
