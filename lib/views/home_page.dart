@@ -1,7 +1,7 @@
 import 'package:bola_bola/app/constants.dart';
 import 'package:bola_bola/views/news/news_page.dart';
 import 'package:bola_bola/views/quiz/quiz_page.dart';
-import 'package:bola_bola/views/search/search_bar.dart';
+import 'package:bola_bola/views/search/search_wiktionary.dart';
 import 'package:bola_bola/views/webview_page.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(
               icon: const Icon(Icons.search),
               onPressed: () {
-                showSearch(context: context, delegate: SearchBar());
+                showSearch(context: context, delegate: SearchWiktionary());
               },
             ),
           ],
@@ -126,11 +126,11 @@ class _MyHomePageState extends State<MyHomePage> {
           style: TextStyle(color: Colors.white, fontSize: 16.0),
         ),
         SizedBox(height: 12.0),
-        Text(
-          'foto moroi ba pixabay.com',
-          style: TextStyle(color: Colors.white, fontSize: 12.0),
-        ),
-        SizedBox(height: 12.0),
+        // Text(
+        //   'foto moroi ba pixabay.com',
+        //   style: TextStyle(color: Colors.white, fontSize: 12.0),
+        // ),
+        // SizedBox(height: 12.0),
       ],
     );
   }

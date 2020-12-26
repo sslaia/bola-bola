@@ -60,6 +60,14 @@ class DetailPage extends StatelessWidget {
               fontSize: 24.0, fontWeight: FontWeight.w600, color: Colors.white),
         ),
         backgroundColor: Colors.indigo,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.edit),
+            onPressed: () {
+              // TODO: Get the editing request
+            },
+          ),
+        ],
       ),
       body: FutureBuilder<WikiSinglePage>(
         future: fetchWikiSinglePage(selectedUrl),

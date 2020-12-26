@@ -23,7 +23,7 @@ String getAmaedola() {
   } else if (randomNr == 9) {
     return 'hulö famanö-manö ci\'a-ci\'a \nhulö fahuhuo mbayakomo, \nlö adudu \nba lö aroro';
   } else if (randomNr == 10) {
-    return 'hulö mate manu ndrawa \nmöi horö zokata-kata';
+    return 'hulö mate \nmanu ndrawa \nmöi horö \nzokata-kata';
   } else {
     return 'hulö la\'eŵa \ndalu nidanö, \nifuli \nfahalö-halö';
   }
@@ -31,7 +31,7 @@ String getAmaedola() {
 
 String getBackgroundImage() {
   Random random = new Random();
-  int randomNr = random.nextInt(7) + 1;
+  int randomNr = random.nextInt(8) + 1;
 
   if (randomNr == 1) {
     return 'beach1.webp';
@@ -47,6 +47,8 @@ String getBackgroundImage() {
     return 'children1.webp';
   } else if (randomNr == 7) {
     return 'children2.webp';
+  } else if (randomNr == 8) {
+    return 'word-cubes.webp';
   } else {
     return 'book2.webp';
   }

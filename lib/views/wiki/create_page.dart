@@ -136,7 +136,7 @@ class _CreatePageState extends State<CreatePage> {
                         value: wikiClass,
                         // icon: Icon(Icons.language_outlined),
                         elevation: 16,
-                        style: TextStyle(color: Colors.teal),
+                        style: TextStyle(color: Colors.indigo),
                         items: <String>[
                           'Verba',
                           'Nomina',
@@ -157,7 +157,11 @@ class _CreatePageState extends State<CreatePage> {
                     ),
                     Spacer(),
                     ElevatedButton(
-                        child: Text('Fuli börögö'),
+                        style: ElevatedButton.styleFrom(primary: Colors.indigo),
+                        child: Text(
+                          'Fuli börögö',
+                          style: TextStyle(color: Colors.white),
+                        ),
                         onPressed: () {
                           _clearWikiForm();
                         })
@@ -342,6 +346,7 @@ class _CreatePageState extends State<CreatePage> {
                   children: [
                     ElevatedButton(
                       child: Text('Fa\'ohe\'ö'),
+                      style: ElevatedButton.styleFrom(primary: Colors.indigo),
                       onPressed: () {
                         if (_createWikiPageKey.currentState.validate()) {
                           setState(() {
@@ -367,6 +372,7 @@ class _CreatePageState extends State<CreatePage> {
                     ),
                     Spacer(),
                     ElevatedButton(
+                        style: ElevatedButton.styleFrom(primary: Colors.indigo),
                         child: Text(
                           'Fuli börögö',
                         ),

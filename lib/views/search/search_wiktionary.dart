@@ -9,8 +9,10 @@ import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<WikiPages>> fetchWikiPages(http.Client client, String title) async {
+  // we use id.wiktionary.org while nia.wiktionary.org is being prepared
   final String url =
       'https://id.wiktionary.org/w/api.php?action=query&format=json&srlimit=10&srsort=relevance&list=search&srsearch=';
+  // 'https://nia.wiktionary.org/w/api.php?action=query&format=json&srlimit=10&srsort=relevance&list=search&srsearch=';
 
   final response = await client.get(url + title);
 
@@ -41,7 +43,7 @@ class WikiPages {
   }
 }
 
-class SearchBar extends SearchDelegate<String> {
+class SearchWiktionary extends SearchDelegate<String> {
   List<WikiPages> wikipages;
   // String selectedResult;
 
@@ -95,6 +97,8 @@ class SearchBar extends SearchDelegate<String> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    // TODO: enable word suggestion as long as
+    // it doesn't impact the app size and performance
     return Container();
   }
 }
@@ -137,7 +141,7 @@ class WikiPagesList extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (BuildContext context) => DetailPage(
-                    title: title,
+                    title: wikipages[index].title,
                     selectedUrl:
                         'https://id.wiktionary.org/api/rest_v1/page/mobile-sections-remaining/$title',
                   ),
